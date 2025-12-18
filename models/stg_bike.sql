@@ -13,6 +13,6 @@ WITH BIKE AS(
         END_LNG,
         MEMBER_CSUAL  
     from {{ source('demo', 'bike') }}
-    where RIDE_ID <> '"bikeid"'
+    where RIDE_ID!='"bikeid"' and  STARTED_AT<>'"starttime"' and STARTED_AT<>'starttime'
 )
 select * from BIKE
